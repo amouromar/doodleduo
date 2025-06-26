@@ -10,9 +10,10 @@ const Room = () => {
       {/* Header */}
       <header className="p-0 m-0">
         <nav className="flex flex-row items-center justify-between">
+          {/* Room Name */}
           <div>
             <article>
-              <div className="flex flex-row items-center text-green-600 text-xl font-light">
+              <div className="flex flex-col text-green-600 text-xl font-light whitespace-wrap">
                 <p className="font-bold text-sm whitespace-nowrap">{`room.name`}</p>{" "}
                 <p className="font-light text-sm">
                   {" "}
@@ -22,6 +23,7 @@ const Room = () => {
               <p className="text-light text-sm font-light whitespace-wrap">{`room.description`}</p>
             </article>
           </div>
+          {/* Actions */}
           <div className="flex flex-row items-center gap-2">
             <button className="bg-green-600 text-white text-sm font-satoshi font-bold px-2 py-2 rounded-full cursor-pointer">
               <Link size={16} />

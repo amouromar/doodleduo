@@ -33,11 +33,11 @@ const Toolbar: React.FC<{
   selectedTool?: string;
 }> = ({ onToolSelect, onUndo, onRedo, onClear, onDownload, selectedTool }) => {
   return (
-    <div className="flex flex-row gap-2 bg-white rounded shadow-2xl px-1 py-2 items-center select-none">
+    <div className="flex flex-row gap-1 bg-white rounded shadow-2xl px-1 py-2 items-center select-none">
       {tools.map((tool) => (
         <button
           key={tool.name}
-          className={`p-2 rounded-full hover:bg-gray-100 transition ${selectedTool === tool.name ? "bg-green-200" : ""}`}
+          className={`p-1.5 rounded-full hover:bg-gray-100 transition ${selectedTool === tool.name ? "bg-green-200" : ""}`}
           onClick={() => onToolSelect && onToolSelect(tool.name)}
           title={tool.name}
         >
