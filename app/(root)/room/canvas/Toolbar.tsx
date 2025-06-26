@@ -3,13 +3,13 @@ import { Pencil, Eraser, Undo2, Redo2, Trash2, Square, Circle, Type, ArrowDownLe
 import React from "react";
 
 const tools = [
-  { name: "Pen", icon: <Pencil size={18} /> },
-  { name: "Eraser", icon: <Eraser size={18} /> },
-  { name: "Rectangle", icon: <Square size={18} /> },
-  { name: "Circle", icon: <Circle size={18} /> },
-  { name: "Line", icon: <ArrowDownLeft size={18} /> },
-  { name: "Text", icon: <Type size={18} /> },
-  { name: "Image", icon: <ImageIcon size={18} /> },
+  { name: "Pen", icon: <Pencil size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Eraser", icon: <Eraser size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Rectangle", icon: <Square size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Circle", icon: <Circle size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Line", icon: <ArrowDownLeft size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Text", icon: <Type size={window.innerWidth < 640 ? 12 : 18} /> },
+  { name: "Image", icon: <ImageIcon size={window.innerWidth < 640 ? 12 : 18} /> },
 ];
 
 const Toolbar: React.FC<{
@@ -21,7 +21,7 @@ const Toolbar: React.FC<{
   selectedTool?: string;
 }> = ({ onToolSelect, onUndo, onRedo, onClear, onDownload, selectedTool }) => {
   return (
-    <div className="flex flex-row gap-2 bg-white rounded shadow-2xl px-1 py-2 items-center select-none">
+    <div className="flex flex-row gap-1 bg-white rounded shadow-2xl px-1 py-2 items-center select-none">
       {tools.map((tool) => (
         <button
           key={tool.name}
@@ -34,18 +34,17 @@ const Toolbar: React.FC<{
       ))}
       <span className="mx-3.5 border-l h-6 border-gray-300"></span>
       <button className="p-1.5 rounded-full hover:bg-gray-100" onClick={onUndo} title="Undo">
-        <Undo2 size={18} />
+        <Undo2 size={window.innerWidth < 640 ? 12 : 18} />
       </button>
       <button className="p-1.5 rounded-full hover:bg-gray-100" onClick={onRedo} title="Redo">
-        <Redo2 size={18} />
+        <Redo2 size={window.innerWidth < 640 ? 12 : 18} />
       </button>
       <button className="p-1.5 rounded-full hover:bg-gray-100" onClick={onClear} title="Clear">
-        <Trash2 size={18} />
+        <Trash2 size={window.innerWidth < 640 ? 12 : 18} />
       </button>
       <button className="p-1.5 rounded-full hover:bg-gray-100" onClick={onDownload} title="Download">
-        <Download size={18} />
+        <Download size={window.innerWidth < 640 ? 12 : 18} />
       </button>
-      {/* Add color picker, stroke size, etc. here as needed */}
     </div>
   );
 };
