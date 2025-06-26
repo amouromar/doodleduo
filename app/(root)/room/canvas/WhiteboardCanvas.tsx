@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 
 import Toolbar from "./Toolbar";
 
-
 const WhiteboardCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [drawing, setDrawing] = useState(false);
@@ -185,14 +184,23 @@ const WhiteboardCanvas = () => {
           className="w-full h-full bg-white rounded shadow"
           style={{
             touchAction: "none",
-            cursor: 'none',
+            cursor: "none",
           }}
           onMouseDown={startDraw}
-          onMouseMove={(e) => { draw(e); handlePointerMove(e); }}
+          onMouseMove={(e) => {
+            draw(e);
+            handlePointerMove(e);
+          }}
           onMouseUp={endDraw}
-          onMouseLeave={() => { endDraw(); handlePointerLeave(); }}
+          onMouseLeave={() => {
+            endDraw();
+            handlePointerLeave();
+          }}
           onTouchStart={startDraw}
-          onTouchMove={(e) => { draw(e); handlePointerMove(e); }}
+          onTouchMove={(e) => {
+            draw(e);
+            handlePointerMove(e);
+          }}
           onTouchEnd={endDraw}
           width={800}
           height={600}
@@ -210,7 +218,9 @@ const WhiteboardCanvas = () => {
               transform: drawing ? "scale(1)" : "scale(1)",
               transition: "transform 0.15s cubic-bezier(.4,2,.6,1)",
               zIndex: 10,
-              filter: drawing ? "drop-shadow(0 2px 6px rgba(0,0,0,0.18))" : undefined,
+              filter: drawing
+                ? "drop-shadow(0 2px 6px rgba(0,0,0,0.18))"
+                : undefined,
             }}
             draggable={false}
             width={32}
@@ -228,13 +238,27 @@ const WhiteboardCanvas = () => {
               min={1}
               max={32}
               value={strokeWidth}
-              onChange={e => setStrokeWidth(Number(e.target.value))}
+              onChange={(e) => setStrokeWidth(Number(e.target.value))}
               className="w-28 accent-green-600"
             />
             <div className="mt-1 flex items-center gap-2">
-              <span className="block w-4 h-4 rounded-full bg-gray-400" style={{ width: 6, height: 6 }} />
-              <span className="block w-4 h-4 rounded-full bg-gray-700" style={{ width: strokeWidth, height: strokeWidth, background: selectedTool === 'Eraser' ? '#fff' : '#111827', border: '1px solid #bbb' }} />
-              <span className="block w-4 h-4 rounded-full bg-gray-400" style={{ width: 28, height: 28 }} />
+              <span
+                className="block w-4 h-4 rounded-full bg-gray-400"
+                style={{ width: 6, height: 6 }}
+              />
+              <span
+                className="block w-4 h-4 rounded-full bg-gray-700"
+                style={{
+                  width: strokeWidth,
+                  height: strokeWidth,
+                  background: selectedTool === "Eraser" ? "#fff" : "#111827",
+                  border: "1px solid #bbb",
+                }}
+              />
+              <span
+                className="block w-4 h-4 rounded-full bg-gray-400"
+                style={{ width: 28, height: 28 }}
+              />
             </div>
           </div>
         )}

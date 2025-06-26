@@ -86,7 +86,7 @@ function getNonOverlappingPositions(
   containerWidth: number,
   containerHeight: number,
   bubbleSize: number,
-  margin: number
+  margin: number,
 ) {
   const positions: { x: number; y: number }[] = [];
   let attempts = 0;
@@ -128,7 +128,7 @@ const Bubbles = () => {
     containerWidth,
     containerHeight,
     BUBBLE_SIZE,
-    BUBBLE_MARGIN
+    BUBBLE_MARGIN,
   );
   const bubbles = popularRooms.map((room, i) => {
     const color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
@@ -280,7 +280,7 @@ const Welcome = () => {
           </div>
         </div>
       )}
-      
+
       {/* Header */}
       <div className="mt-8 px-2">
         <header>

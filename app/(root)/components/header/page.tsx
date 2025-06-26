@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Desktop from './Desktop'
-import Mobile from './Mobile'
+import Desktop from "./Desktop";
+import Mobile from "./Mobile";
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
       <Mobile />
       <Desktop />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

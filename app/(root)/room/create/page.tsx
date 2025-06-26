@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CreateRoom = () => {
-  return (
-    <div>CreateRoom</div>
-  )
-}
+  return <div>CreateRoom</div>;
+};
 
-export default CreateRoom
+export default CreateRoom;

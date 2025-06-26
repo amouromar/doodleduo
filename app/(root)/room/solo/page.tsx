@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SoloRoom = () => {
-  return (
-    <div>SoloRoom</div>
-  )
-}
+  return <div>SoloRoom</div>;
+};
 
-export default SoloRoom
+export default SoloRoom;
