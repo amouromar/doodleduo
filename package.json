@@ -1,6 +1,6 @@
 {
-  "name": "ultimate-nextjs-course",
-  "version": "0.1.0",
+  "name": "doodleduo",
+  "version": "1.0.1-demo",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
