@@ -6,24 +6,26 @@ import WhiteboardCanvas from "./canvas/WhiteboardCanvas";
 
 const Room = () => {
   return (
-    <div className="px-2 mt-4 font-satoshi md:px-[10%] lg:px-[20%]">
+    <div className="w-full px-2 mt-4 font-satoshi md:px-[10%] lg:px-[20%]">
       {/* Header */}
       <header className="p-0 m-0">
         <nav className="flex flex-row items-center justify-between">
-          {/* Room Name */}
-          <div>
+          <div className="p-0 m-0">
             <article>
-              <div className="flex flex-col text-green-600 text-xl font-light whitespace-wrap">
-                <p className="font-bold text-sm whitespace-nowrap">{`room.name`}</p>{" "}
-                <p className="font-light text-sm">
-                  {" "}
-                  by {`room.creator`} with {`room.users.length`} others
+              <div className="flex text-green-600 text-xl font-light whitespace-wrap">
+                <p className="font-bold text-sm whitespace-wrap">
+                  <span className="font-bold">{`room.name`}</span>{" "}
+                  <span>
+                    by <span className="font-light">{`room.creator`}</span>
+                  </span>{" "}
+                  with <span className="font-light">{`room.users.length`}</span>{" "}
+                  others
                 </p>
               </div>
               <p className="text-light text-sm font-light whitespace-wrap">{`room.description`}</p>
             </article>
           </div>
-          {/* Actions */}
+          {/*  */}
           <div className="flex flex-row items-center gap-2">
             <button className="bg-green-600 text-white text-sm font-satoshi font-bold px-2 py-2 rounded-full cursor-pointer">
               <Link size={16} />
@@ -35,7 +37,7 @@ const Room = () => {
         </nav>
       </header>
       {/* Body */}
-      <main className="h-[calc(100vh-10rem)] mt-4 rounded flex items-center justify-center">
+      <main className="mt-4 rounded">
         <WhiteboardCanvas />
       </main>
     </div>

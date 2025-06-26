@@ -229,7 +229,7 @@ const WhiteboardCanvas = () => {
         )}
         {/* Stroke size slider (shown for Pen/Eraser) */}
         {(selectedTool === "Pen" || selectedTool === "Eraser") && (
-          <div className="absolute bottom-4 left-4 bg-white/90 rounded-xl shadow-lg px-4 py-2 flex flex-col items-center z-20">
+          <div className="absolute top-4 left-4 bg-white/90 rounded-xl shadow-lg px-4 py-2 flex flex-col items-center z-20">
             <label className="text-xs mb-1 font-medium text-gray-700 select-none">
               Stroke size
             </label>
