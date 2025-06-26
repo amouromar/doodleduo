@@ -213,7 +213,7 @@ const WhiteboardCanvas = () => {
             style={{
               position: "absolute",
               left: pointer.x - 12,
-              top: pointer.y - 8,
+              top: pointer.y - 0,
               pointerEvents: "none",
               transform: drawing ? "scale(1)" : "scale(1)",
               transition: "transform 0.15s cubic-bezier(.4,2,.6,1)",
@@ -239,13 +239,9 @@ const WhiteboardCanvas = () => {
               max={32}
               value={strokeWidth}
               onChange={(e) => setStrokeWidth(Number(e.target.value))}
-              className="w-28 accent-green-600"
+              className="w-28 h-1 accent-green-600 cursor-pointer rounded-full"
             />
             <div className="mt-1 flex items-center gap-2">
-              <span
-                className="block w-4 h-4 rounded-full bg-gray-400"
-                style={{ width: 6, height: 6 }}
-              />
               <span
                 className="block w-4 h-4 rounded-full bg-gray-700"
                 style={{
@@ -254,10 +250,6 @@ const WhiteboardCanvas = () => {
                   background: selectedTool === "Eraser" ? "#fff" : "#111827",
                   border: "1px solid #bbb",
                 }}
-              />
-              <span
-                className="block w-4 h-4 rounded-full bg-gray-400"
-                style={{ width: 28, height: 28 }}
               />
             </div>
           </div>
